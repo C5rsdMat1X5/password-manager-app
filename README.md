@@ -1,4 +1,3 @@
-esta aplicacion s trata de un guardador de contraseñas con sitio usuario y contraseña esta hecho con pyside6 para la ui y criptography para encriptar las contraseñas y el metadata 
 # 🔐 Password Manager App
 
 Esta aplicación es un **gestor de contraseñas** desarrollado en Python, usando `PySide6` para la interfaz gráfica y `cryptography` para cifrar las contraseñas de forma segura.
@@ -30,7 +29,7 @@ Esta aplicación es un **gestor de contraseñas** desarrollado en Python, usando
 
 1. **Clona el repositorio:**
    ```bash
-   git clone https://github.com/tuusuario/password-manager-app.git
+   git clone https://github.com/C5rsdMat1X5/password-manager-app
    cd password-manager-app
    ```
 
@@ -47,6 +46,10 @@ Esta aplicación es un **gestor de contraseñas** desarrollado en Python, usando
 
 4. **Ejecuta la aplicación:**
    ```bash
+   # En linux y mac
+   python3 main.py
+   
+   # En windows
    python main.py
    ```
 
@@ -62,4 +65,4 @@ Esta aplicación es un **gestor de contraseñas** desarrollado en Python, usando
 
 ## 🧠 Autor
 
-Desarrollado por Matías Henríquez — para practicar, aprender y no llorar por olvidar contraseñas.
+Desarrollado por Matías Henríquez.
