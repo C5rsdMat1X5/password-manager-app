@@ -12,6 +12,7 @@ Esta aplicación es un **gestor de contraseñas** desarrollado en Python, usando
 
 ```
 ├── assets/              # Archivos estáticos (CSS)
+│   └── style.css        # Stylesheet (CSS)
 ├── core/                # Lógica principal y ventanas
 │   ├── config.py        # Configuraciones globales
 │   ├── list_window.py   # Ventana que lista contraseñas
