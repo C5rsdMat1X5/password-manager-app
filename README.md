@@ -45,13 +45,16 @@ Esta aplicación es un **gestor de contraseñas** desarrollado en Python, usando
    ```
 
 4. **Ejecuta la aplicación:**
-   ```bash
-   # En linux y mac
-   python3 main.py
-   
-   # En windows
-   python main.py
-   ```
+
+   - En **Linux/macOS**:
+     ```bash
+     python3 main.py
+     ```
+
+   - En **Windows**:
+     ```bash
+     python main.py
+     ```
 
 ## 📁 Datos
 
