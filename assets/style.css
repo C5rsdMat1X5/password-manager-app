@@ -1,0 +1,190 @@
+#password_manager_window {
+    background-color: #1e1e2f;
+    font-family: 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+}
+
+#password_manager_central QGroupBox {
+    background-color: #2b2b3d;
+    border: 1px solid #a892ff;
+    border-radius: 12px;
+    padding-top: 25px;
+    margin-top: 20px;
+}
+QGroupBox {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00ffaa;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0 5px;
+}
+
+QMessageBox {
+    background-color: #2b2b3d;
+    color: #e0e0e0;
+    border: 1px solid #7c62ff;
+    font-size: 14px;
+}
+
+QMessageBox QLabel {
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+QMessageBox QPushButton {
+    background-color: #7c62ff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #a892ff;
+}
+
+QMessageBox QPushButton:pressed {
+    background-color: #624bd3;
+}
+
+QLineEdit {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #35354b;
+    border: 1px solid #4f4f69;
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #7c62ff;
+}
+
+QPushButton {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #7c62ff;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+}
+
+QPushButton:hover {
+    background-color: #a892ff;
+}
+
+QPushButton:pressed {
+    background-color: #624bd3;
+}
+
+QTextEdit {
+    background-color: #2f2f44;
+    color: #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid #4f4f69;
+}
+
+#save_state {
+    color: #5effa0;
+    font-weight: bold;
+}
+
+#login_window {
+    background-color: #1e1e2f;
+    font-family: 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+}
+
+#app_title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #7c62ff;
+    margin-bottom: 5px;
+}
+
+#app_subtitle {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+#login_container {
+    background-color: #2b2b3d;
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid #4f4f69;
+}
+
+#password_input {
+    font-size: 14px;
+    background-color: #35354b;
+    color: #e0e0e0;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #4f4f69;
+}
+
+#login_button {
+    background-color: #7c62ff;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#login_button:hover {
+    background-color: #a892ff;
+}
+
+#error_message {
+    color: #ff5e5e;
+    font-weight: bold;
+}
+
+#footer_label {
+    font-size: 11px;
+    color: #aaaaaa;
+    margin-top: 15px;
+}
+
+#password_list_window {
+    background-color: #1e1e2f;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#section_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #7c62ff;
+    margin-bottom: 10px;
+}
+
+#passwords_list {
+    background-color: #2f2f44;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #4f4f69;
+    color: #e0e0e0;
+    font-size: 13px;
+}
+
+#reload_button {
+    background-color: #7c62ff;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#reload_button:hover {
+    background-color: #a892ff;
+}
