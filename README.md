@@ -1,72 +1,72 @@
 # 🔐 Password Manager App
 
-Esta aplicación es un **gestor de contraseñas** desarrollado en Python, usando `PySide6` para la interfaz gráfica y `cryptography` para cifrar las contraseñas de forma segura.
+This application is a **password manager** developed in Python, using `PySide6` for the graphical user interface and `cryptography` to securely encrypt passwords.
 
-## 🧰 Tecnologías usadas
+## 🧰 Technologies Used
 
-- 🖼️ [PySide6](https://doc.qt.io/qtforpython/) - Para la interfaz gráfica
-- 🔐 [cryptography](https://cryptography.io/en/latest/) - Para el cifrado seguro de las contraseñas
+- 🖼️ [PySide6](https://doc.qt.io/qtforpython/) - For the graphical interface
+- 🔐 [cryptography](https://cryptography.io/en/latest/) - For secure password encryption
 - 🐍 Python 3.10+
 
-## 📦 Estructura del proyecto
+## 📦 Project Structure
 
 ```
-├── assets/              # Archivos estáticos (CSS)
+├── assets/              # Static files (CSS)
 │   └── style.css        # Stylesheet (CSS)
-├── core/                # Lógica principal y ventanas
-│   ├── config.py        # Configuraciones globales
-│   ├── list_window.py   # Ventana que lista contraseñas
-│   ├── login_window.py  # Ventana de inicio de sesión
-│   ├── manager.py       # Ventana principal del gestor
-│   ├── startup.py       # Inicialización de la app
-│   └── utils.py         # Utilidades varias
-├── data/                # Aquí se guarda la base de datos encriptada
-├── main.py              # Archivo principal de entrada
-├── requirements.txt     # Dependencias del proyecto
+├── core/                # Main logic and windows
+│   ├── config.py        # Global configuration
+│   ├── list_window.py   # Window to list passwords
+│   ├── login_window.py  # Login window
+│   ├── manager.py       # Main window of the manager
+│   ├── startup.py       # App initialization
+│   └── utils.py         # Miscellaneous utilities
+├── data/                # Encrypted database storage
+├── main.py              # Main entry point
+├── requirements.txt     # Project dependencies
 └── README.md
 ```
 
-## 🚀 Instalación
+## 🚀 Installation
 
-1. **Clona el repositorio:**
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/C5rsdMat1X5/password-manager-app
    cd password-manager-app
    ```
 
-2. **Crea un entorno virtual (opcional pero recomendado):**
+2. **Create a virtual environment (optional but recommended):**
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # En Windows usa: venv\Scripts\activate
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
    ```
 
-3. **Instala las dependencias:**
+3. **Install the dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Ejecuta la aplicación:**
+4. **Run the application:**
 
-   - En **Linux/macOS**:
+   - On **Linux/macOS**:
      ```bash
      python3 main.py
      ```
 
-   - En **Windows**:
+   - On **Windows**:
      ```bash
      python main.py
      ```
 
-## 📁 Datos
+## 📁 Data
 
-- Las contraseñas se almacenan cifradas dentro de la carpeta `data/`.
-- El acceso a la app requiere una contraseña maestra, la cual se establece al primer uso.
+- Passwords are stored encrypted inside the `data/` folder.
+- The app requires a master password for access, which is set on the first use.
 
-## ⚠️ Notas de seguridad
+## ⚠️ Security Notes
 
-- Este proyecto es solo con fines educativos. No se recomienda usarlo para gestionar contraseñas reales sin antes revisarlo y adaptarlo adecuadamente.
-- Asegúrate de mantener el archivo `data/` seguro y respaldado si decides usarlo.
+- This project is for educational purposes only. It is not recommended to use it to manage real passwords without proper review and adaptation.
+- Make sure to keep the `data/` folder secure and backed up if you decide to use it.
 
-## 🧠 Autor
+## 🧠 Author
 
-Desarrollado por Matías Henríquez.
+Developed by Matías Henríquez.

@@ -12,7 +12,7 @@ def read_key(key_file: str) -> bytes:
 
 def create_pass(SIGNUP_FILE: str, KEY_FILE: str, passw: str) -> None:
     if not passw:
-        print("la contra esta vacia")
+        print("The password is empty")
     fernet = Fernet(read_key(KEY_FILE))
     data = fernet.encrypt(passw.encode())
     with open(SIGNUP_FILE, "wb") as f:
@@ -29,7 +29,7 @@ def read_pass(SIGNUP_FILE, KEY_FILE):
         decrypted = fernet.decrypt(encrypted_data).decode()
         return decrypted
     except Exception as e:
-        print(f"Clave inválida o datos corruptos: no se pudo descifrar la contraseña. {e}")
+        print(f"Invalid key or corrupt data: could not decrypt password. {e}")
         return None
 
 
@@ -63,7 +63,7 @@ def save_encrypted_passwords(passwords: dict, passwords_file: str, fernet: Ferne
         with open(passwords_file, "wb") as f:
             f.write(encrypted_data)
     except Exception as e:
-        print(f"Error al guardar contraseñas: {e}")
+        print(f"Error saving passwords: {e}")
 
 
 def rotate_keys(passwords_file: str, key_file: str, signup_file: str, passwords: dict) -> None:

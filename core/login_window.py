@@ -13,18 +13,18 @@ class LogInWindow(QWidget):
         self.password = None
         self.load_passwords()
 
-        self.setWindowTitle("Login - Password Manager")
+        self.setWindowTitle("Log In - Password Manager")
         self.setFixedSize(420, 420)
         self.setObjectName("login_window")
 
         main_layout = QVBoxLayout(self)
         main_layout.setAlignment(Qt.AlignCenter)
 
-        self.lbl_title = QLabel("🔐 Password Manager Log In")
+        self.lbl_title = QLabel("🔐 Log In to Password Manager")
         self.lbl_title.setAlignment(Qt.AlignCenter)
         self.lbl_title.setObjectName("app_title")
 
-        self.lbl_subtitle = QLabel("Accede de forma segura a tus contraseñas")
+        self.lbl_subtitle = QLabel("Securely access your passwords")
         self.lbl_subtitle.setAlignment(Qt.AlignCenter)
         self.lbl_subtitle.setObjectName("app_subtitle")
 
@@ -37,16 +37,16 @@ class LogInWindow(QWidget):
 
         self.input_pwd = QLineEdit()
         self.input_pwd.setEchoMode(QLineEdit.Password)
-        self.input_pwd.setPlaceholderText("Ingresa tu contraseña")
+        self.input_pwd.setPlaceholderText("Enter your password")
         self.input_pwd.setObjectName("password_input")
         self.input_pwd.returnPressed.connect(self.login)
 
-        self.btn_pw = QPushButton("Entrar")
+        self.btn_pw = QPushButton("Log In")
         self.btn_pw.setObjectName("login_button")
         self.btn_pw.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_pw.clicked.connect(self.login)
 
-        self.btn_cpw = QPushButton("Cambiar contraseña")
+        self.btn_cpw = QPushButton("Change Password")
         self.btn_cpw.setObjectName("login_button")
         self.btn_cpw.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cpw.clicked.connect(self.change_pw)
@@ -60,7 +60,7 @@ class LogInWindow(QWidget):
         container_layout.addWidget(self.lbl_error)
         container_layout.addWidget(self.btn_cpw)
 
-        self.lbl_footer = QLabel("v1.0 - desarrollado por Matías")
+        self.lbl_footer = QLabel("v1.0 - developed by Matías")
         self.lbl_footer.setAlignment(Qt.AlignCenter)
         self.lbl_footer.setObjectName("footer_label")
 
@@ -81,7 +81,7 @@ class LogInWindow(QWidget):
             with open(CSS_PATH, "r") as f:
                 self.setStyleSheet(f.read())
         except Exception as e:
-            print(f"No se pudo cargar el archivo CSS: {e}")
+            print(f"Failed to load CSS file: {e}")
 
     def load_passwords(self):
         self.password = read_pass(SIGNUP_FILE, KEY_FILE)
@@ -95,24 +95,24 @@ class LogInWindow(QWidget):
             self.mainWindow.show()
             self.close()
         else:
-            self.lbl_error.setText("❌ Contraseña incorrecta")
+            self.lbl_error.setText("❌ Incorrect password")
 
 
 class ChangePassword(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Cambiar Contraseña - Password Manager")
+        self.setWindowTitle("Change Password - Password Manager")
         self.setFixedSize(420, 400)
         self.setObjectName("login_window")
 
         main_layout = QVBoxLayout(self)
         main_layout.setAlignment(Qt.AlignCenter)
 
-        self.lbl_title = QLabel("🔐 Cambiar Contraseña")
+        self.lbl_title = QLabel("🔐 Change Password")
         self.lbl_title.setAlignment(Qt.AlignCenter)
         self.lbl_title.setObjectName("app_title")
 
-        self.lbl_subtitle = QLabel("Verifica tu contraseña actual para continuar")
+        self.lbl_subtitle = QLabel("Verify your current password to continue")
         self.lbl_subtitle.setAlignment(Qt.AlignCenter)
         self.lbl_subtitle.setObjectName("app_subtitle")
 
@@ -125,11 +125,11 @@ class ChangePassword(QWidget):
 
         self.input_pwd = QLineEdit()
         self.input_pwd.setEchoMode(QLineEdit.Password)
-        self.input_pwd.setPlaceholderText("Confirma tu contraseña actual")
+        self.input_pwd.setPlaceholderText("Confirm your current password")
         self.input_pwd.setObjectName("password_input")
         self.input_pwd.returnPressed.connect(self.login)
 
-        self.btn_pw = QPushButton("Continuar con el cambio")
+        self.btn_pw = QPushButton("Continue with change")
         self.btn_pw.setObjectName("login_button")
         self.btn_pw.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_pw.clicked.connect(self.login)
@@ -142,7 +142,7 @@ class ChangePassword(QWidget):
         container_layout.addWidget(self.btn_pw)
         container_layout.addWidget(self.lbl_error)
 
-        self.lbl_footer = QLabel("v1.0 - desarrollado por Matías")
+        self.lbl_footer = QLabel("v1.0 - developed by Matías")
         self.lbl_footer.setAlignment(Qt.AlignCenter)
         self.lbl_footer.setObjectName("footer_label")
 
@@ -161,7 +161,7 @@ class ChangePassword(QWidget):
             with open(CSS_PATH, "r") as f:
                 self.setStyleSheet(f.read())
         except Exception as e:
-            print(f"No se pudo cargar el archivo CSS: {e}")
+            print(f"Failed to load CSS file: {e}")
 
     def login(self):
         self.password = read_pass(SIGNUP_FILE, KEY_FILE)
@@ -172,4 +172,4 @@ class ChangePassword(QWidget):
             self.sign_up.run(cpw)
             self.close()
         else:
-            self.lbl_error.setText("❌ Contraseña incorrecta. Intenta nuevamente.")
+            self.lbl_error.setText("❌ Incorrect password. Please try again.")

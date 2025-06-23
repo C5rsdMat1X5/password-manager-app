@@ -35,7 +35,7 @@ class PasswordManagerWindow(QMainWindow):
         self.old_fernet = Fernet(read_key(self.key_file))
         self.new_passwords = {}
 
-        self.setWindowTitle("Panel Principal - Password Manager")
+        self.setWindowTitle("Main Panel - Password Manager")
         self.setFixedSize(700, 600)
         self.setObjectName("password_manager_window")
 
@@ -48,19 +48,19 @@ class PasswordManagerWindow(QMainWindow):
         layout.setContentsMargins(30, 30, 30, 30)
         layout.setSpacing(20)
 
-        self.btn_show_pwds = QPushButton("📁 Ver contraseñas guardadas")
+        self.btn_show_pwds = QPushButton("📁 View Saved Passwords")
         self.btn_show_pwds.setObjectName("show_passwords_button")
         self.btn_show_pwds.setCursor(QCursor(Qt.PointingHandCursor))
 
-        self.btn_save = QPushButton("💾 Guardar cambios")
+        self.btn_save = QPushButton("💾 Save Changes")
         self.btn_save.setObjectName("save_button")
         self.btn_save.setCursor(QCursor(Qt.PointingHandCursor))
 
-        self.btn_clear = QPushButton("📖 Borrar Contraseñas")
+        self.btn_clear = QPushButton("📖 Clear Passwords")
         self.btn_clear.setObjectName("clear_button")
         self.btn_clear.setCursor(QCursor(Qt.PointingHandCursor))
 
-        actions_group = QGroupBox("⚙️ Acciones generales")
+        actions_group = QGroupBox("⚙️ General Actions")
         actions_group.setObjectName("actions_group")
         actions_layout = QVBoxLayout()
         actions_layout.addWidget(self.btn_show_pwds)
@@ -69,18 +69,18 @@ class PasswordManagerWindow(QMainWindow):
         actions_group.setLayout(actions_layout)
 
         self.input_site = QLineEdit()
-        self.input_site.setPlaceholderText("Ej: github.com")
+        self.input_site.setPlaceholderText("e.g., github.com")
         self.input_site.setObjectName("site_input")
         
         self.input_usern = QLineEdit()
-        self.input_usern.setPlaceholderText("Ej: nombre132")
+        self.input_usern.setPlaceholderText("e.g., username123")
         self.input_usern.setObjectName("site_input")
 
         self.input_pwd = QLineEdit()
-        self.input_pwd.setPlaceholderText("Ej: contraseña123")
+        self.input_pwd.setPlaceholderText("e.g., password123")
         self.input_pwd.setObjectName("password_input")
 
-        self.btn_add_pwd = QPushButton("➕ Añadir contraseña")
+        self.btn_add_pwd = QPushButton("➕ Add Password")
         self.btn_add_pwd.setObjectName("save_password_button")
         self.btn_add_pwd.setCursor(QCursor(Qt.PointingHandCursor))
 
@@ -94,28 +94,28 @@ class PasswordManagerWindow(QMainWindow):
         self.lbl_save_state.setAlignment(Qt.AlignCenter)
         self.lbl_save_state.setObjectName("save_state")
 
-        form_group = QGroupBox("✍️ Añadir nueva contraseña")
+        form_group = QGroupBox("✍️ Add New Password")
         form_group.setObjectName("form_group")
         form_layout = QFormLayout()
-        form_layout.addRow("🌐 Sitio:", self.input_site)
-        form_layout.addRow("👤 Usuario:", self.input_usern)
-        form_layout.addRow("🔑 Contraseña:", self.input_pwd)
+        form_layout.addRow("🌐 Site:", self.input_site)
+        form_layout.addRow("👤 Username:", self.input_usern)
+        form_layout.addRow("🔑 Password:", self.input_pwd)
         form_layout.addRow(self.btn_add_pwd)
         form_layout.addRow(self.lbl_save_state)
         form_group.setLayout(form_layout)
 
-        gen_group = QGroupBox("🎲 Generador de contraseñas")
+        gen_group = QGroupBox("🎲 Password Generator")
         gen_group.setObjectName("gen_group")
         gen_layout = QFormLayout()
-        gen_layout.addRow("🔢 ¿Cuántas generar?", self.input_qty)
-        gen_layout.addRow("📏 Longitud de cada una:", self.input_len)
+        gen_layout.addRow("🔢 How many to generate?", self.input_qty)
+        gen_layout.addRow("📏 Length of each one:", self.input_len)
         gen_layout.addRow(self.btn_gen_pwds)
         gen_group.setLayout(gen_layout)
 
-        self.txt_gen_pwds = QTextEdit("🕒 Esperando ordenes...")
+        self.txt_gen_pwds = QTextEdit("🕒 Waiting for instructions...")
         self.txt_gen_pwds.setReadOnly(True)
         
-        self.lbl_footer = QLabel("v1.0 - desarrollado por Matías")
+        self.lbl_footer = QLabel("v1.0 - developed by Matías")
         self.lbl_footer.setAlignment(Qt.AlignCenter)
         self.lbl_footer.setObjectName("footer_label")
 
@@ -138,7 +138,7 @@ class PasswordManagerWindow(QMainWindow):
             with open(CSS_PATH, "r") as f:
                 self.setStyleSheet(f.read())
         except Exception as e:
-            print(f"No se pudo cargar el archivo CSS: {e}")
+            print(f"Failed to load the CSS file: {e}")
 
     def open_password_list_window(self):
         if self.password_list_window is None:
@@ -149,8 +149,8 @@ class PasswordManagerWindow(QMainWindow):
     def clear_passwords(self):
         reply = QMessageBox.question(
             self,
-            "Borrar",
-            "¿Deseas borrar las contraseñas?",
+            "Delete",
+            "Do you want to delete the passwords?",
             QMessageBox.Yes | QMessageBox.No,
         )
         if reply == QMessageBox.Yes:
@@ -165,9 +165,9 @@ class PasswordManagerWindow(QMainWindow):
         password = self.input_pwd.text()
         if site and password and username:
             self.new_passwords[site] = [username, password]
-            self.lbl_save_state.setText("✅ Contraseña añadida")
+            self.lbl_save_state.setText("✅ Password added")
         else:
-            self.lbl_save_state.setText("❌ Completa todos los campos")
+            self.lbl_save_state.setText("❌ Please fill in all fields")
 
         self.input_site.clear()
         self.input_pwd.clear()
@@ -177,7 +177,7 @@ class PasswordManagerWindow(QMainWindow):
         passwords.update(self.new_passwords)
         save_encrypted_passwords(passwords, self.passwords_file, self.old_fernet)
         self.new_passwords.clear()
-        self.lbl_save_state.setText("✅ Cambios guardados")
+        self.lbl_save_state.setText("✅ Changes saved")
 
     def gen_pass(self):
         q = self.input_qty.text()
@@ -188,13 +188,13 @@ class PasswordManagerWindow(QMainWindow):
             pws = generate_passwords(q, l)
             self.txt_gen_pwds.setText("\n".join(pws))
         except Exception:
-            self.txt_gen_pwds.setText("❌ Asegúrate de ingresar números válidos.")
+            self.txt_gen_pwds.setText("❌ Make sure to enter valid numbers.")
 
     def closeEvent(self, event):
         reply = QMessageBox.question(
             self,
-            "Salir",
-            "¿Deseas guardar los cambios antes de cerrar?",
+            "Exit",
+            "Do you want to save changes before exiting?",
             QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel,
         )
         if reply == QMessageBox.Yes:

@@ -31,19 +31,19 @@ class StartUp:
             def __init__(self):
                 super().__init__()
                 self.login_window = LogInWindow()
-                self.setWindowTitle("Crear Contraseña - Password Manager")
+                self.setWindowTitle("Create Password - Password Manager")
                 self.setFixedSize(420, 400)
                 self.setObjectName("login_window")
 
                 main_layout = QVBoxLayout(self)
                 main_layout.setAlignment(Qt.AlignCenter)
 
-                self.lbl_title = QLabel("🛡️ Crea tu Contraseña Maestra")
+                self.lbl_title = QLabel("🛡️ Create Your Master Password")
                 self.lbl_title.setAlignment(Qt.AlignCenter)
                 self.lbl_title.setObjectName("app_title")
 
                 self.lbl_subtitle = QLabel(
-                    "Tu seguridad comienza aquí. Elige una contraseña segura."
+                    "Your security starts here. Choose a strong password."
                 )
                 self.lbl_subtitle.setAlignment(Qt.AlignCenter)
                 self.lbl_subtitle.setObjectName("app_subtitle")
@@ -57,11 +57,11 @@ class StartUp:
 
                 self.input_pwd = QLineEdit()
                 self.input_pwd.setEchoMode(QLineEdit.Password)
-                self.input_pwd.setPlaceholderText("Escribe una nueva contraseña segura")
+                self.input_pwd.setPlaceholderText("Enter a strong new password")
                 self.input_pwd.setObjectName("password_input")
                 self.input_pwd.returnPressed.connect(self.on_login_clicked)
 
-                self.btn_login = QPushButton("Guardar y continuar")
+                self.btn_login = QPushButton("Save and Continue")
                 self.btn_login.setObjectName("login_button")
                 self.btn_login.setCursor(QCursor(Qt.PointingHandCursor))
                 self.btn_login.clicked.connect(self.on_login_clicked)
@@ -74,7 +74,7 @@ class StartUp:
                 container_layout.addWidget(self.btn_login)
                 container_layout.addWidget(self.lbl_error)
 
-                self.lbl_footer = QLabel("v1.0 - desarrollado por Matías")
+                self.lbl_footer = QLabel("v1.0 - developed by Matías")
                 self.lbl_footer.setAlignment(Qt.AlignCenter)
                 self.lbl_footer.setObjectName("footer_label")
 
@@ -93,13 +93,13 @@ class StartUp:
                     with open(CSS_PATH, "r") as f:
                         self.setStyleSheet(f.read())
                 except Exception as e:
-                    print(f"No se pudo cargar el archivo CSS: {e}")
+                    print(f"Failed to load CSS file: {e}")
 
             def on_login_clicked(self):
                 pwd = self.input_pwd.text().strip()
                 if not pwd:
                     self.lbl_error.setText(
-                        "⚠️ Por favor, ingresa una contraseña\nantes de continuar."
+                        "⚠️ Please enter a password before continuing."
                     )
                     return
 
